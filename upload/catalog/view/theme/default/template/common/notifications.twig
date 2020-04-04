@@ -1,0 +1,26 @@
+{% if notifications|length > 1 %}
+    <div class="dropdown">
+        <div style="cursor: pointer" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-bell"></i>
+            <span class="d-none d-md-inline">{{ text_notifications }}</span> <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="dropdown-menu">
+            {% for notification in notifications %}
+                <button
+                        onclick="showModal('{{ notification.title }}','{{ notification.id }}')"
+                        id="{{ notification.id }}"
+                        content="{{ notification.content }}"
+                        class="dropdown-item">{{ notification.title }}</button>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+<script>
+    function showModal(title, id) {
+        var content = $("#" + id).attr('content');
+        $("#notification-content").html(content.trim());
+        $("#notificationTitle").html(title.trim());
+        $("#notificationModal").modal();
+    }
+</script>

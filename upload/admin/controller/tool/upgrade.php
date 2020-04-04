@@ -337,8 +337,8 @@ class ControllerToolUpgrade extends Controller {
 
 		if (!$json) {
 			$ignore = array(
-				'config-dist.php',
-				'admin/config-dist.php'
+				'config.php',
+				'admin/config.php'
 			);
 
 			$files = array();

@@ -712,6 +712,15 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 
+            // Menu
+            $data['menus'][] = array(
+                'id'       => 'menu-notification',
+                'icon'	   => 'fa-bell',
+                'name'	   => $this->language->get('notification'),
+                'href'     => $this->url->link('notifications/list', 'user_token=' . $this->session->data['user_token']),
+                'children' => array()
+            );
+
 			// Stats
 			$this->load->model('sale/order');
 

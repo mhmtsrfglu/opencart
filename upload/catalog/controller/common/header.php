@@ -74,6 +74,7 @@ class ControllerCommonHeader extends Controller {
 		$data['cookie'] = $this->load->controller('common/cookie');
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
+		$data['notifications'] = $this->load->controller('common/notifications');
 		$data['search'] = $this->load->controller('common/search');
 		$data['cart'] = $this->load->controller('common/cart');
 		$data['menu'] = $this->load->controller('common/menu');
